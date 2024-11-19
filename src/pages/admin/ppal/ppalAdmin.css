@@ -1,0 +1,166 @@
+/* PpalAdmin.css */
+.admin-container {
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: "Segoe UI", Arial, sans-serif;
+  transition: padding-left 0.3s ease;
+  padding: 20px;
+  background-image: url("/fondoAdmin.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.admin-container.header-visible {
+  padding-left: 300px; /* 250px del header + 20px de padding */
+}
+
+.admin-container.header-hidden {
+  padding: 20px 140px;
+}
+
+.toggle-header-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  padding: 8px 16px;
+  background-color: #2d6a4f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 85px;
+  height: 100%;
+  background-color: rgba(45, 106, 79, 0.8); /* Color #2d6a4f con opacidad */
+  transition: width 0.3s ease;
+  z-index: 900; /* Mantiene el sidebar por encima del contenido */
+  backdrop-filter: blur(7px); /* Efecto de desenfoque */
+}
+
+/* Sidebar expandido */
+.admin-container.header-visible .sidebar {
+  width: 0px; /* Sidebar expandido */
+}
+
+.toggle-header-btn:hover {
+  background-color: #2d6a4f;
+}
+
+.admin-dashboard {
+  margin: 0px 0px;
+  color: #fff; /* Texto blanco para contraste */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más notoria */
+  padding: 20px;
+  backdrop-filter: blur(25px); /* Desenfoque de fondo */
+  border: solid 1px rgba(255, 255, 255, 0.627);
+}
+
+.admin-dashboard h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.titulo {
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.recent-section {
+  margin-bottom: 30px;
+}
+
+.recent-section h2 {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.card-row {
+  display: flex;
+  gap: 15px;
+}
+
+.card {
+  background-color: rgba(1, 34, 11, 0.7); /* Fondo ligeramente transparente */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más profunda para resaltar */
+  width: calc(50% - 15px);
+  max-width: 500px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Desplazamiento más notorio */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumento de sombra al pasar el mouse */
+}
+
+.card h3 {
+  font-size: 20px;
+  color: #ffffff; /* Color verde relacionado con el tema */
+  margin-bottom: 12px;
+}
+
+.card p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .admin-container {
+    padding: 15px;
+  }
+
+  .admin-container.header-visible {
+    padding-left: 15px; /* En móviles, el header aparecerá encima del contenido */
+  }
+
+  .toggle-header-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px !important; /* Forzar posición en móviles */
+  }
+
+  .admin-dashboard {
+    margin-top: 60px; /* Más espacio para el botón en móviles */
+  }
+
+  .card-row {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+.recent-section {
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 8px; /* Bordes redondeados */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: solid 1px rgba(255, 255, 255, 0.627);
+}
+
+.recent-section h2 {
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px; /* Espaciado entre las letras */
+}

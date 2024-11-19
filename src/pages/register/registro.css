@@ -1,0 +1,139 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.envoltura-registro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./login.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contenedor-registro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  padding: 20px;
+  backdrop-filter: blur(15px);
+  overflow: hidden;
+  border-radius: 10px;
+  border: solid 1px rgba(255, 255, 255, 0.627);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.381);
+}
+
+.contenedor-registro h2 {
+  margin-bottom: 20px;
+  font-size: 60px;
+  color: white;
+  margin-top: -10px;
+}
+
+.entrada-registro {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: solid 1px rgba(255, 255, 255, 0.614);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0);
+  color: #ffffff;
+}
+
+.entrada-registro::placeholder {
+  color: rgb(255, 255, 255);
+  opacity: 1;
+}
+
+.seleccion-rol {
+  font-size: 14px;
+  color: white;
+  width: 100%;
+  text-align: left;
+}
+
+.opciones-rol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.rol-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.checkbox-rol {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.marca-rol {
+  width: 14px;
+  height: 14px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 6px;
+  position: relative;
+}
+
+.checkbox-rol:checked + .marca-rol::after {
+  content: "";
+  position: absolute;
+  left: 3.5px;
+  bottom: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #0d2e05;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.boton-registro {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: white;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.boton-registro:hover {
+  background-color: #256a15;
+  color: white;
+}
+
+.boton-volver {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #256a15;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.boton-volver:hover {
+  background-color: white;
+  color: #333;
+}

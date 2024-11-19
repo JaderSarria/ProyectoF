@@ -1,0 +1,244 @@
+/* Centrar el formulario */
+.CyE-admin-dash-container {
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: "Segoe UI", Arial, sans-serif;
+  transition: padding-left 0.3s ease;
+  padding: 20px;
+  background-image: url("/fondoAdmin.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  min-height: 100vh; /* Asegura que el contenedor tenga al menos el alto de la pantalla */
+  min-width: 150vh;
+}
+
+/* El contenedor principal para la administración */
+.CyE-admin-dash-container.CyE-admin-dash-header-visible {
+  padding-left: 300px;
+}
+
+.CyE-admin-dash-container.CyE-admin-dash-header-hidden {
+  padding: 20px 140px;
+}
+
+.CyE-admin-dash-toggle-header-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  padding: 8px 16px;
+  background-color: #2d6a4f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.CyE-admin-dash-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 85px;
+  height: 100%;
+  background-color: rgba(45, 106, 79, 0.8);
+  transition: width 0.3s ease;
+  z-index: 900;
+  backdrop-filter: blur(7px);
+}
+
+.CyE-admin-dash-container.CyE-admin-dash-header-visible
+  .CyE-admin-dash-sidebar {
+  width: 0px;
+}
+
+.CyE-admin-dash-toggle-header-btn:hover {
+  background-color: #2d6a4f;
+}
+
+.CyE-admin-dash-dashboard {
+  margin: 0px 0px;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  backdrop-filter: blur(25px);
+  border: solid 1px rgba(255, 255, 255, 0.627);
+}
+
+.CyE-admin-dash-dashboard h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.CyE-admin-dash-title {
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.CyE-admin-dash-grid {
+  /* display: grid; */
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+@media (max-width: 1200px) {
+  .CyE-admin-dash-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .CyE-admin-dash-container {
+    padding: 15px;
+  }
+
+  .CyE-admin-dash-container.CyE-admin-dash-header-visible {
+    padding-left: 15px;
+  }
+
+  .CyE-admin-dash-toggle-header-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px !important;
+  }
+
+  .CyE-admin-dash-dashboard {
+    margin-top: 60px;
+  }
+
+  .CyE-admin-dash-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .CyE-admin-dash-card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+/* Estilo del formulario en CyEBitacora */
+.CyE-admin-dash-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: solid 1px rgba(255, 255, 255, 0.4);
+  min-width: 100vh;
+  width: 80%; /* Ajustar el tamaño del formulario */
+  max-width: 1000px; /* Limitar el tamaño máximo */
+}
+
+/* Estilo para los grupos dentro del formulario */
+.CyE-admin-dash-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Estilo de los campos de entrada (input y textarea) */
+.CyE-admin-dash-input,
+.CyE-admin-dash-textarea {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f7f7f7;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+.CyE-admin-dash-input:focus,
+.CyE-admin-dash-textarea:focus {
+  border-color: #2d6a4f;
+  outline: none;
+  background-color: #fff;
+}
+
+/* Estilo para los textos en las etiquetas */
+.CyE-admin-dash-form-group label {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Estilo para los botones de envío */
+.CyE-admin-dash-submit-btn {
+  grid-column: span 2; /* Este botón ocupará las dos columnas */
+  background-color: #2d6a4f;
+  color: #fff;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.CyE-admin-dash-submit-btn:hover {
+  background-color: #1e4e36;
+}
+
+/* Estilo del contenedor de los formularios en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .CyE-admin-dash-form {
+    grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas pequeñas */
+    padding: 15px;
+  }
+
+  .CyE-admin-dash-form-group label {
+    font-size: 14px;
+  }
+
+  .CyE-admin-dash-input,
+  .CyE-admin-dash-textarea {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .CyE-admin-dash-submit-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+.CyE-admin-dash-img-preview {
+  margin-top: 10px;
+  max-width: 150px; /* Ajusta el tamaño de la miniatura */
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Estilo del botón de eliminar */
+.CyE-admin-dash-delete-btn {
+  background-color: #d2493a;
+  color: #fff;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.CyE-admin-dash-delete-btn:hover {
+  background-color: #e31700; /* Rojo más oscuro al pasar el mouse */
+}
+
+.CyE-admin-dash-delete-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.5); /* Sombra para enfoque */
+}

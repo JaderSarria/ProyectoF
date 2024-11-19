@@ -1,0 +1,265 @@
+.admin-container {
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: "Segoe UI", Arial, sans-serif;
+  transition: padding-left 0.3s ease;
+  padding: 20px;
+  background-image: url("/fondoAdmin.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.admin-container.header-visible {
+  padding-left: 300px;
+}
+
+.admin-container.header-hidden {
+  padding: 20px 140px;
+}
+
+.toggle-header-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  padding: 8px 16px;
+  background-color: #2d6a4f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 85px;
+  height: 100%;
+  background-color: rgba(45, 106, 79, 0.8);
+  transition: width 0.3s ease;
+  z-index: 900;
+  backdrop-filter: blur(7px);
+}
+
+.admin-container.header-visible .sidebar {
+  width: 0px;
+}
+
+.toggle-header-btn:hover {
+  background-color: #2d6a4f;
+}
+
+.admin-dashboard {
+  margin: 0px 0px;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  backdrop-filter: blur(25px);
+  border: solid 1px rgba(255, 255, 255, 0.627);
+}
+
+.admin-dashboard h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.titulo {
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.xyz_bitacora_section_wrapper {
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: solid 1px rgba(255, 255, 255, 0.627);
+}
+
+.xyz_bitacora_section_wrapper h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.xyz_bitacora_grid_container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.xyz_bitacora_item_box {
+  position: relative;
+  background-color: rgba(1, 34, 11, 0.7);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.xyz_bitacora_item_box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.xyz_bitacora_item_box h3 {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.xyz_bitacora_item_box p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: white;
+}
+
+@media (max-width: 1200px) {
+  .xyz_bitacora_grid_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-container {
+    padding: 15px;
+  }
+
+  .admin-container.header-visible {
+    padding-left: 15px;
+  }
+
+  .toggle-header-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px !important;
+  }
+
+  .admin-dashboard {
+    margin-top: 60px;
+  }
+
+  .xyz_bitacora_grid_container {
+    grid-template-columns: 1fr;
+  }
+
+  .xyz_bitacora_item_box {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+.search-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  color: black;
+  background-color: white;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #4f79f7;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.filters input,
+.filters select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #403939c4;
+  border-radius: 8px;
+  width: 200px;
+  max-width: 100%;
+  background-color: #ffffff;
+  color: black;
+}
+
+.filters input:focus,
+.filters select:focus {
+  outline: none;
+  border-color: #4f79f7;
+}
+
+.toggle-filters-btn {
+  margin: 20px auto;
+  display: block;
+  background-color: #1e4a3d;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toggle-filters-btn:hover {
+  background-color: #27ae60;
+}
+
+.create-bitacora-btn {
+  background-color: #e67e22;
+  color: white;
+  font-size: 16px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.create-bitacora-btn:hover {
+  background-color: #d35400;
+}
+
+button + button {
+  margin-left: 10px;
+}
+
+.xyz_bitacora_item_box {
+  justify-content: right;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn, .manage-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;  /* Ajusta el tamaño del icono */
+  cursor: pointer;
+}
+
+.edit-btn:hover, .manage-btn:hover {
+  color: #007BFF;  /* Cambia el color al pasar el ratón */
+}

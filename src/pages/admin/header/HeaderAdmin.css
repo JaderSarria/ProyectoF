@@ -1,0 +1,120 @@
+.admin-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba(45, 106, 79, 0.8); /* Verde #2d6a4f con opacidad */
+    color: white;
+    padding: 20px 25px; /* Menos espacio en los lados para hacerlo menos ancho */
+    width: 200px; /* Reducimos el ancho */
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    transition: transform 0.3s ease-in-out;
+    z-index: 500;
+    backdrop-filter: blur(7px); /* Efecto de desenfoque */
+}
+
+.admin-header.hidden {
+  transform: translateX(-100%);
+}
+
+.admin-header.visible {
+  transform: translateX(0);
+}
+
+.aaa {
+  margin-top: 20px;
+}
+
+.admin-header h1 {
+  font-size: 1.8rem; /* Tamaño de fuente más moderado */
+  margin: 40px 0;
+  width: 100%;
+  color: #e9f7e7; /* Color claro y suave para el título */
+}
+
+.admin-nav {
+  width: 100%;
+}
+
+.admin-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Espaciado ajustado entre los enlaces */
+  width: 100%;
+}
+
+.admin-nav ul li {
+  width: 100%;
+}
+
+.admin-nav a {
+  color: #e9f7e7; /* Color suave para los enlaces */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 12px 16px;
+  display: block;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.admin-nav a:hover {
+  background-color: #6abf69; /* Verde claro para hover */
+  transform: translateX(6px);
+}
+
+.logout-btn {
+  background-color: #d32f2f; /* Rojo suave para el botón de logout */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  margin-top: auto;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logout-btn:hover {
+  background-color: #c62828; /* Rojo más oscuro para el hover */
+  transform: translateY(-2px);
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .admin-header {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 15px;
+  }
+
+  .admin-header.hidden {
+    transform: translateY(-100%);
+  }
+
+  .admin-nav ul {
+    gap: 8px;
+  }
+
+  .admin-nav a {
+    padding: 10px;
+    font-size: 1rem; /* Ajuste para pantallas pequeñas */
+  }
+
+  .logout-btn {
+    margin-top: 15px;
+  }
+}
